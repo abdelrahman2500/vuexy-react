@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vuexy-react/static/css/main.e4ea9691.css",
+    "main.js": "/vuexy-react/static/js/main.de190652.js",
+    "static/js/787.4b1552e3.chunk.js": "/vuexy-react/static/js/787.4b1552e3.chunk.js",
+    "index.html": "/vuexy-react/index.html",
+    "main.e4ea9691.css.map": "/vuexy-react/static/css/main.e4ea9691.css.map",
+    "main.de190652.js.map": "/vuexy-react/static/js/main.de190652.js.map",
+    "787.4b1552e3.chunk.js.map": "/vuexy-react/static/js/787.4b1552e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4ea9691.css",
+    "static/js/main.de190652.js"
+  ]
+}
