@@ -1,0 +1,111 @@
+@import '../../styles/_dark';
+@import '../../styles/_light';
+
+.pagination{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    .pagination-list{
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        .before, .after{
+            width: 32px;
+            height: 32.19px;
+            cursor: pointer;
+            transition: .2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 50%;
+            &:hover{
+                background: #7367f0 !important;
+                color: #FFF !important;
+            }
+        }
+        .before{
+            margin-right: 0.3571rem;
+        }
+        
+        .after{
+            margin-left: 0.3571rem;
+        }
+        .numbers{
+            display: flex;
+            .pagination-item{
+                font-size: 14px;
+                background-color: #f3f2f7;
+                color: #626b7b;
+                width: 32px;
+                height: 32.19px;
+                cursor: pointer;
+                transition: .2s;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                // border-radius: 50%;
+                span{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &:first-of-type{
+                    border-radius: 50% 0 0 50%;
+                }
+                
+                &:last-of-type{
+                    border-radius: 0 50% 50% 0;
+                }
+                &.active{
+                    span{
+                        background: #7367f0;
+                        color: #FFF;
+                    }
+                }
+                &:hover{
+                    color: #7367f0;
+                }
+            }
+        }
+    }
+
+    &.dark-theme{
+        .pagination-list{
+            .pagination-item{
+                background-color: $second-dark-color;
+                color: #626b7b;
+                &.before, &.after{
+                    &.disable{
+                        &:hover{
+                            background-color: $second-dark-color !important;
+                            color: #626b7b !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.light-theme{
+        .pagination-list{
+            .pagination-item{
+                background-color: #f3f2f7;
+                color: #b9b9c3;
+                &.before, &.after{
+                    &.disable{
+                        &:hover{
+                            background-color: #f3f2f7 !important;
+                            color: #b9b9c3 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

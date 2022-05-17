@@ -1,0 +1,229 @@
+@import '../../styles/_dark';
+@import '../../styles/_light';
+
+.header{
+    .header-nav{
+        position: fixed;
+        width: calc(100% - 66px - 260px);
+        z-index: 12;
+        display: flex;
+        justify-content: space-between;
+        padding: 11.2px 14px;
+        border-radius: .428rem;
+        box-shadow: 0 4px 24px 0 #22292f1a;
+        &::before{
+            position: absolute;
+            content: "";
+            top: -1.3rem;
+            left: 0;
+            width: 100%;
+            height: 1.3rem;
+        }
+    }
+    .left{
+        display: flex;
+        align-items: center;
+        ul{
+            &.icons{
+                li{
+                    display: inline-block;
+                    padding: 0 0.5rem;
+                    font-size: 21px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    &.active{
+                        color: #ff9f43;
+                    }
+                }
+            }
+            .toggle-menu{
+                font-size: 21px;
+                padding:  0 7px;
+                display: none;
+                cursor: pointer;
+            }
+
+        }
+        
+    }
+    .right{
+        ul.icons{
+            display: flex;
+            align-items: center;
+            li{
+                display: inline-block;
+                padding: 0 0.5rem;
+                font-size: 21px;
+                font-weight: bold;
+                cursor: pointer;
+                &.lang{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 22px;
+                        height: 14px;
+                    }
+                    .lang-span{
+                        font-size: 14px;
+                        margin-left: 7px;
+                        font-weight: normal;
+                    }
+                    @media (max-width: 445px){
+                        display: none;
+                    }
+                }
+                &.toggle-theme{
+                    @media (max-width: 420px){
+                        display: none;
+                    }
+                }
+                &.notification{
+                    position: relative;
+                    .notification-sapn{
+                        position: absolute;
+                        font-size: 11px;
+                        width: 20px;
+                        height: 20px;
+                        background: red;
+                        padding: .25rem;
+                        color: #FFF;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        top: -9px;
+                        right: 2px;
+                    }
+                }
+                &.user{
+                    display: flex;
+                    align-items: center;
+                    .user-info{           
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        margin-right: 11.2px;
+                        .user-name{
+                            font-size: 14px;
+                        }
+                        .user-role{
+                            font-size: 11.6667px;
+                            font-weight: normal;
+                        }
+                    }
+                    .user-icon{
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: #EEEDFD;
+                        border-radius: 50%;
+                        color: #7367f0;
+                        .status{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            width: 11px;
+                            height: 11px;
+                            background-color: #28c76f;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media (max-width: "1200px") {
+        .header-nav{
+            width: calc(100% - 66px );
+            .left{
+                ul{
+                    .toggle-menu{
+                        display: inline-block !important;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: "992px"){
+        .left{
+            ul{
+                &.icons{
+                    display: none;
+                }
+            }
+        }
+    }
+    @media (max-width: "575px"){
+        .right{
+            ul{
+                .user{
+                    .user-info{
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.dark-theme{
+        .header-nav{
+            
+            background-color: $second-dark-color;
+            // box-shadow: 0 4px 24px 0 #22292f1a;
+            &::before{
+                background-color: rgba($main-dark-color, .7);
+            }
+        }
+        .left{
+            ul{
+                &.icons{
+                    li{
+                        color: $text-dark-color;
+                    }
+                }
+            }
+            
+        }
+        .right{
+            ul.icons{
+                li{
+                    color: $text-dark-color;
+                }
+                .user{
+                    .user-icon{
+                        background-color: #31375A;
+                    }
+                }
+            }
+        }
+    }
+    &.light-theme{
+        .header-nav{
+            background-color: $second-light-color;
+            // box-shadow: 0 4px 24px 0 #22292f1a;
+            &::before{
+                background-color: rgba($main-light-color, .7);
+            }
+        }
+        .left{
+            ul{
+                &.icons{
+                    li{
+                        color: $text-light-color;
+                    }
+                }
+            }
+        }
+        .right{
+            ul.icons{
+                li{
+                    color: $text-light-color;
+                }
+            }
+        }
+    }
+}

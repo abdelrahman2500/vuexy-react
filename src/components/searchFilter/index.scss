@@ -1,0 +1,226 @@
+@import '../../styles/_dark';
+@import '../../styles/_light';
+
+.search-filter{
+    .search-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        h4{
+            font-size: 14px;
+            color: #5e5873;
+            font-weight: 500;
+            @media (max-width: 991px) {
+                display: none;
+            }
+        }
+        .toggle-menu{
+            font-size: 21px;
+            color: #5e5873;
+            font-weight: 500;
+            display: none;
+            cursor: pointer;
+            @media (max-width: 991px) {
+                display: block;
+            }
+        }
+        .btns{
+            display: flex;
+            .features{
+                position: relative;
+                margin-right: 13px;
+                .features-btn{
+                    display: flex;
+                    align-items: center;
+                    color: #7367f0;
+                    padding: 10.004px 21px;
+                    font-size: 13px;
+                    background-color: #f6f6f6;
+                    border: 1px solid #7367f0;
+                    outline: none;
+                    cursor: pointer;
+                    border-radius: 0.358rem;
+                    transition: .3s ease-in-out;
+                    &:hover{
+                        background-color: #EEEDFD;
+                    }
+                }
+                ul{
+                    position: absolute;
+                    width: 140px;
+                    background: #fff;
+                    right: 0;
+                    border-radius: 0.358rem;
+                    margin-top: 7px;
+                    padding: 7px 0;
+                    display: none;
+                    li{
+                        font-size: 14px;
+                        color: #6e6b7b;
+                        padding: 9.1px 17.92px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #EEEDFD;
+                            color: #7367f0;
+                        }
+                    }
+                    &.active{
+                        display: block;
+                    }
+                }
+            }
+            .group-btns{
+                display: flex;
+                font-size: 13px;
+                button{
+                    display: flex;
+                    align-items: center;
+                    background-color: #f6f6f6;
+                    padding: 5.804px 14px;
+                    font-size: 20px;
+                    outline: none;
+                    border: 1px solid #7367f0;
+                    color: #7367f0;
+                    cursor: pointer;
+                    transition: .3s ease-in-out;
+                    &:hover{
+                        background-color: #EEEDFD;
+                    }
+                    &.active{
+                        background-color: #7367f033;
+                    }
+                    &:first-of-type{
+                        border-radius: 0.358rem 0 0 0.358rem;
+                        border-right: none;
+                    }
+                    &:last-of-type{
+                        border-radius: 0 0.358rem 0.358rem 0;
+                    }
+                }
+            }
+        }
+    }
+    form{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 14px;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 8px 0 #22292f24;
+        border-radius: 0.3rem;
+        margin-bottom: 28px;
+        input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            &::placeholder{
+                color: #9c9c9c;
+            }
+        }
+    }
+    &.dark-theme{
+        .search-row{
+            h4{
+                color: $text-dark-color;
+            }
+            .toggle-menu{
+                color: $text-dark-color;
+            }
+            .btns{
+                .features{
+                    .features-btn{
+                        background-color: $main-dark-color;
+                        &:hover{
+                            box-shadow: inset -10px -10px 10px $second-dark-color;
+                        }
+                    }
+                    ul{
+                        background: $second-dark-color;
+                        li{
+                            color: $text-dark-color;
+                            &:hover{
+                                background-color: $main-dark-color
+                            }
+                        }
+                    }
+                }
+                .group-btns{
+                    button{
+                        background-color: $main-dark-color;
+                        &:hover{
+                            background-color:  $second-dark-color;
+                        }
+                        &.active{
+                            background-color: #7367f033;
+                        }
+                    }
+                }
+            }
+        }
+        form{
+            background-color: $second-dark-color;
+            box-shadow: 0 2px 8px 0 #22292f24;
+            input{
+                background-color: $second-dark-color;
+                color: $text-dark-color;
+                &::placeholder{
+                    color: #9c9c9c;
+                }
+            }
+        }
+    }
+    &.light-theme{
+        .search-row{
+            h4{
+                color: $text-light-color;
+            }
+            .toggle-menu{
+                color: $text-light-color;
+            }
+            .btns{
+                .features{
+                    .features-btn{
+                        background-color: $main-light-color;
+                        &:hover{
+                            box-shadow: inset -10px -10px 10px $second-light-color;
+                        }
+                    }
+                    ul{
+                        background: $second-light-color;
+                        li{
+                            color: $text-light-color;
+                            &:hover{
+                                background-color: $main-light-color
+                            }
+                        }
+                    }
+                }
+                .group-btns{
+                    button{
+                        background-color: $main-light-color;
+                        &:hover{
+                            background-color:  $second-light-color;
+                        }
+                        &.active{
+                            background-color: #7367f033;
+                        }
+                    }
+                }
+            }
+        }
+        form{
+            background-color: $second-light-color;
+            box-shadow: 0 2px 8px 0 #22292f24;
+            input{
+                background-color: $second-light-color;
+                color: $text-light-color;
+                &::placeholder{
+                    color: #9c9c9c;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+@import '../../styles/_dark';
+@import '../../styles/_light';
+
+.dropdown{
+    padding: 0 15px;
+    .dropdown-head{
+        display: flex;
+        padding: 10px 15px;
+        align-items: center;
+        transition: .3s;
+        // height: 42.33px;
+        // margin: 0 15px;
+        &.active{
+            border-radius: 0.428rem;
+        }
+        svg{
+            font-size: 24.3px;
+            margin-right: 15.4px;
+        }
+        h3{
+            font-size: 15.4px;
+            color: #625f6e;
+            font-weight: 400;
+            line-height: 22.33px;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            &.heading{
+                font-size: 12.6px;
+                font-weight: bold;
+                color: #a6a4b0;
+                line-height: 1.5;
+                letter-spacing: .01rem;
+                margin: 22.004px 0 1.2px;
+            }
+            svg{
+                margin: 0;
+                color: #616778;
+            }
+        }
+        &:hover{
+            padding-left: 19px;
+        }
+    }
+    ul{
+        // padding: 0 15px;
+        li{
+            // margin: 0 15px;
+            color: #625f6e;
+            padding: 10px 15px 10px 20px;
+            transition: .3s;
+            cursor: pointer;
+            svg{
+                margin-right: 1.45rem;
+                font-size: 11px;
+                height: 11px;
+                width: 11px;
+                font-weight: 400;
+            }
+            &:hover{
+                padding-left: 24px;
+            }
+            &.active{
+                background: linear-gradient(118deg,#7367f0,rgba(115,103,240,.7));
+                color: #FFF !important;
+                border-radius: 0.428rem;
+                box-shadow: 1px 1px 20px #7367f0;
+            }
+            &:first-of-type{
+                margin-top: 7px !important;
+            }
+        }
+        &.active{
+            display: block;
+        }
+        &.dis-active{
+            display: none;
+        }
+    }
+
+    &.dark-theme{
+        .dropdown-head{
+            &.active{
+                background-color: $main-dark-color;
+            }
+            h3{
+                color: $text-dark-color;
+                &.heading{
+                    color: #616778;
+                }
+            }
+        }
+        ul{
+            li{
+                color: $text-dark-color;
+            }
+        }
+    }
+    &.light-theme{
+        .dropdown-head{
+            &.active{
+                background-color: $main-light-color;
+            }
+            h3{
+                color: $text-light-color;
+                &.heading{
+                    color: $text-light-color;
+                }
+            }
+        }
+        ul{
+            li{
+                color: $text-light-color;
+            }
+        }
+    }
+}

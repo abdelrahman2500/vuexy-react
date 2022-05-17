@@ -1,0 +1,13 @@
+.rating{
+    span{
+        font-size: 20px;
+        font-weight: 400;
+        
+        .full{
+            color: #ff9f43;
+        }
+        .empty{
+            color: #b9b9c3;
+        }
+    }
+}

@@ -1,0 +1,171 @@
+@import '../../styles/_dark';
+@import '../../styles/_light';
+
+.products-filter{
+    flex: 260px;
+    max-width: 260px;
+    transition: .3s;
+
+    @media (max-width: 991px) {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        left: -100%;
+        z-index: 1000;
+        overflow-y: scroll;
+        &.active{
+            left: 0;
+        }
+        .filter-title{
+            display: none !important;
+        }
+    }
+    .filter-title{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+        height: 38.59px;
+        display: grid;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .filter-options{
+        padding: 21px;
+        border-radius: .428rem;
+        box-shadow: 0 4px 24px 0 #22292f1a;
+        form{
+            &:not(:last-of-type){
+                margin-bottom: 35px;
+            }
+            label{
+                cursor: pointer;
+                h6{
+                    font-size: 14px;
+                    margin-bottom: 1rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                }
+            }
+            .form-control{
+                font-size: 14px;
+                line-height: 1.1;
+                display: grid;
+                color: #5e5873;
+                grid-template-columns: 1em auto;
+                margin-bottom: 10.5px;
+                gap: 15.2px;
+                input{
+                    appearance: none;
+                    background-color: transparent;
+                    margin: 0;
+                    font: inherit;
+                    width: 17.98px;
+                    height: 17.98px;
+                    border: 1px solid #676d7d;
+                    border-radius: 50%;
+                    transform: translateY(-0.075em);
+                    display: grid;
+                    place-content: center;
+                    &::before{
+                        content: "";
+                        width: 17.98px;
+                        height: 17.98px;
+                        border-radius: 50%;
+                        transform: scale(0);
+                        transition: 120ms transform ease-in-out;
+                        box-shadow: inset 1em 1em #7367F0;
+                        background-color: #7367F0;
+                    }
+                    &:checked{
+                        border-color: #7367F0;
+                        &::before{
+                            transform: scale(1);
+                        }
+                    }
+                }
+                & + .form-control{
+                    margin-top: 1rem;
+                }
+            }
+            .row{
+                display: flex;
+                justify-content: space-between;
+                // align-items: center;
+                .products-rating{
+                    cursor: pointer;
+                    // margin-bottom: 7px;
+                    display: flex;
+                    span{
+                        margin-left: 3.5px;
+                        color: #7367F0;
+                    }
+                }
+                .products-amount{
+                    font-size: 14px;
+                }
+            }
+            &.slider-range{
+                label{
+                    display: flex;
+                    justify-content: space-between;
+                    color: #7367F0;
+                }
+            }
+        }
+    }
+
+    &.dark-theme{
+        .filter-title{
+            color: $text-dark-color ;
+        }
+        .filter-options{
+            background-color: $second-dark-color;
+            box-shadow: 0 4px 24px 0 #22292f1a;
+            form{
+                label{
+                    h6{
+                        color: $text-dark-color;
+                    }
+                }
+                .form-control{
+                    color: $text-dark-color;
+                    input{
+                        color: $text-dark-color;
+                    }
+                }
+                .row{
+                    .products-amount{
+                        color: $text-dark-color;
+                    }
+                }
+            }
+        }
+    }
+    &.light-theme{
+        .filter-title{
+            color: $text-light-color ;
+        }
+        .filter-options{
+            background-color: $second-light-color;
+            box-shadow: 0 4px 24px 0 #22292f1a;
+            form{
+                label{
+                    h6{
+                        color: $text-light-color;
+                    }
+                }
+                .form-control{
+                    color: $text-light-color;
+                    input{
+                        color: $text-light-color;
+                    }
+                }
+                .row{
+                    .products-amount{
+                        color: $text-light-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@import '../../styles/_dark';
+@import '../../styles/_light';
+
+.page-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 21px;
+    .left{
+        display: flex;
+        align-items: center;
+        h2{
+            font-size: 24px;
+            padding-right: 1rem;
+            font-weight: 500;
+        }
+        .path{
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 4.2px 14px;
+            border-left: 1px solid #3b4253;
+            li{
+                color:#7367f0 ;
+                &:first-of-type{
+                    font-size: 20px;
+                    display: flex;
+                }
+                &:not(:first-of-type){
+                    padding-left: 8.4px;
+                }
+                span{
+                    margin-left: 8.4px;
+                    &.active{
+                        color: #b4b7bd;
+                    }
+                }
+                svg{
+                    &.arrow{
+                        font-size: 10px;
+                    }
+                }
+            }
+        
+            @media (max-width: 648px){
+                display: none;
+            }
+        }
+    }
+    .right{
+        button{
+            padding: 11.2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #7367f0;
+            background-color: #7367f0;
+            color: #FFFFFF;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: .3s;
+            &:hover{
+                box-shadow: -5px 5px 15px #7367f059, 5px 5px 15px #7367f059;
+            }
+        }
+        @media (max-width: 767px){
+            display: none;
+        }
+    }
+    &.dark-theme{
+        .left{
+            h2{
+                color: $text-dark-color;
+            }
+            .path{
+                li{
+                    span{  
+                        &.active{
+                            color: $text-dark-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.light-theme{
+        .left{
+            h2{
+                color: $text-light-color;
+            }
+            .path{
+                li{
+                    span{  
+                        &.active{
+                            color: $text-light-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
